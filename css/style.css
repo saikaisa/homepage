@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:300");
+
+html,body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: PingFang SC,RobotoDraft,Roboto,Helvetica Neue,Helvetica,Arial,STHeiti,华文黑体,Microsoft YaHei,微软雅黑,sans-serif;
+	color: #333333;
+	background: rgba(249, 249, 249, 0.66);
+	overflow-x: hidden; 
+	overflow-y: hidden;
+}
+
+.personal-info {
+    margin: auto;
+    text-align: center;
+}
+
+.social-links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.social-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.social-links ul li {
+    display: inline;
+    margin-right: 5px;
+	margin-top: 20px;
+	float: left;
+	list-style-type: none;
+	padding: 12px;
+}
+
+.avatar {
+	border-radius: 50%;
+	width: 150px;
+}
+
+p {
+	margin: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.bio {
+	color: rgba(51,51,51,0.54);
+	margin-top: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bio > span {
+	font-weight: 300;
+	letter-spacing: 1.4px;
+	opacity: 0;
+	transition: all 1s .5s;
+}
+
+.bio > span.emphasis {
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+.bio.ready > span {
+	opacity: 1;
+}
+
+.intro .bio span {
+	font-family: 'Microsoft YaHei', sans-serif;
+	font-weight: bolder;
+	font-size: 16px;
+}
+
+.content-container {
+	position: relative;
+	text-align: center;
+}
+
+.footer {
+	position: absolute;
+	bottom: 8px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 12px;
+	opacity: .4;
+	font-weight: 100;
+}
+
+::selection {
+	background: rgba(0,149,255,.1);
+	color: #6F8EC5;
+}
+
+/*background*/
+:root {
+	--grow-time: 5s;
+	--fade-time: 3s;
+}
+
+.circle {
+	-webkit-animation: grow var(--grow-time) forwards, fade var(--fade-time) calc(var(--grow-time) - var(--fade-time)) forwards;
+	animation: grow var(--grow-time) forwards, fade var(--fade-time) calc(var(--grow-time) - var(--fade-time)) forwards;
+	background: #81ecec;
+	border-radius: 100%;
+	height: 2px;
+	position: absolute;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	width: 2px;
+	z-index: -1;
+}
+
+@-webkit-keyframes grow {
+	0% {
+		-webkit-transform: translateZ(0) scale(0);
+		transform: translateZ(0) scale(0);
+	}
+
+	100% {
+		-webkit-transform: translateZ(0) scale(100);
+		transform: translateZ(0) scale(100);
+	}
+}
+
+@keyframes grow {
+	0% {
+		-webkit-transform: translateZ(0) scale(0);
+		transform: translateZ(0) scale(0);
+	}
+
+	100% {
+		-webkit-transform: translateZ(0) scale(100);
+		transform: translateZ(0) scale(100);
+	}
+}
+
+@-webkit-keyframes fade {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fade {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+    .avatar {
+		width: 120px;
+	}
+	.social-links img {
+		width: 25px;
+	}
+	.social-links ul li {
+		padding: 10px;
+	}
+}
