@@ -1,74 +1,35 @@
-// /* 结束加载动画 */
-// document.addEventListener("DOMContentLoaded", function() {
-//   var startTime = new Date().getTime();
-//   var minimumLoadingTime = 500; // 最少的加载时间
-
-//   var checkLoadingTime = function() {
-//       var currentTime = new Date().getTime();
-//       var elapsedTime = currentTime - startTime;
-
-//       if (elapsedTime >= minimumLoadingTime) {
-//           // 隐藏加载动画
-//           var loader = document.querySelector('.loader');
-//           if (loader) {
-//               loader.style.display = 'none';
-//           }
-//           // 显示主内容
-//           var mainContent = document.getElementById('main-content');
-//           if (mainContent) {
-//               mainContent.style.visibility = 'visible';
-//               addCircles();
-//           }
-//       } else {
-//           setTimeout(checkLoadingTime, minimumLoadingTime - elapsedTime);
-//       }
-//   };
-//   checkLoadingTime();
-// });
-// 有 BUG：加载动画启用时，bio 的过渡效果没了
-
-window.addEventListener('load', () => {
-  $('h1').addClass('ready');
-  $('.bio').addClass('ready');
-  $('li').addClass('ready');
-});
-
-/* 字母过渡动画 */
+/* 结束加载动画 */
 document.addEventListener("DOMContentLoaded", function() {
-  setTimeout(function() {
-      var firstPart = document.querySelector('.first-part');
-      var secondPart = document.querySelector('.second-part');
-      var firstTransitionCompleted = false;
-      var secondTransitionCompleted = false;
+  var startTime = new Date().getTime();
+  var minimumLoadingTime = 2000; // 最少的加载时间
 
-      firstPart.style.transform = 'translateX(-20%)';
-      secondPart.style.transform = 'translateX(-42%)';
-      secondPart.style.opacity = '1';
+  var checkLoadingTime = function() {
+      var currentTime = new Date().getTime();
+      var elapsedTime = currentTime - startTime;
 
-      var checkTransitions = function() {
-          if (firstTransitionCompleted && secondTransitionCompleted) {
-              firstPart.style.transition = 'none';
-              secondPart.style.transition = 'none';
-              firstPart.style.transform = 'translateX(0%)';
-              secondPart.style.transform = 'translateX(0%)';
-              secondPart.style.position = 'static';
+      if (elapsedTime >= minimumLoadingTime) {
+          // 隐藏加载动画
+          var loader = document.querySelector('.loader');
+          if (loader) {
+              loader.style.display = 'none';
           }
-      };
-
-      firstPart.addEventListener('transitionend', function() {
-          firstTransitionCompleted = true;
-          checkTransitions();
-      });
-
-      secondPart.addEventListener('transitionend', function() {
-          secondTransitionCompleted = true;
-          checkTransitions();
-      });
-  }, 2000);
+          // 显示主内容
+          var mainContent = document.getElementById('main-content');
+          if (mainContent) {
+              mainContent.style.visibility = 'visible';
+              $('.bio').addClass('ready');
+              $('.pre-text').addClass('text');
+              addCircles();
+          }
+      } else {
+          setTimeout(checkLoadingTime, minimumLoadingTime - elapsedTime);
+      }
+  };
+  checkLoadingTime();
 });
 
 /* 画圆 */
-var timer = 350;
+var timer = 500;
 
 function addCircles() {
 	setTimeout(() => {
