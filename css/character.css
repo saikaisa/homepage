@@ -1,8 +1,9 @@
 .text {
 	font-family: "Fredoka One", cursive;
-	font-size: 6em;
-	letter-spacing: -8px;
+	font-size: 7em;
+	letter-spacing: -11px;
 	text-align: center;
+	margin: 10px auto;
 }
 
 .text .letter {
@@ -61,11 +62,42 @@
     position: absolute;
 	-webkit-animation: slideFadeInSecondPart 5s ease-in-out infinite alternate;
     animation: slideFadeInSecondPart 5s ease-in-out infinite alternate;
-	cursor: default;
 }
 
-.text .second-part .character {
-	cursor: default !important;
+@-webkit-keyframes slideFirstPart {
+    0%, 25% {
+		-webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+    50% {
+		-webkit-transform: translateX(-20%);
+        transform: translateX(-20%);
+    }
+	100% {
+		-webkit-transform: translateX(-20%);
+		transform: translateX(-20%);
+	}
+}
+
+@-webkit-keyframes slideFadeInSecondPart {
+    0%, 25% {
+		visibility: hidden;
+        opacity: 0;
+		-webkit-transform: translateX(19%);
+        transform: translateX(19%);
+    }
+    50% {
+		visibility: visible;
+        opacity: 1;
+        -webkit-transform: translateX(-42%);
+        transform: translateX(-42%);
+    }
+	100% {
+		visibility: visible;
+		opacity: 1;
+        -webkit-transform: translateX(-42%);
+        transform: translateX(-42%);
+	}
 }
 
 @keyframes slideFirstPart {
@@ -85,16 +117,19 @@
 
 @keyframes slideFadeInSecondPart {
     0%, 25% {
+		visibility: hidden;
         opacity: 0;
-		-webkit-transform: translateX(18%);
-        transform: translateX(18%);
+		-webkit-transform: translateX(19%);
+        transform: translateX(19%);
     }
     50% {
+		visibility: visible;
         opacity: 1;
         -webkit-transform: translateX(-42%);
         transform: translateX(-42%);
     }
 	100% {
+		visibility: visible;
 		opacity: 1;
         -webkit-transform: translateX(-42%);
         transform: translateX(-42%);
@@ -724,7 +759,8 @@
 
 @media only screen and (max-width: 767px) {
 	.text {
-		font-size: 5em;
+		font-size: 6em;
+		letter-spacing: -9px;
 	}
 
 	.text .letter span {
@@ -734,7 +770,8 @@
 
 @media only screen and (max-width: 480px) {
 	.text {
-		font-size: 4em;
+		font-size: 5em;
+		letter-spacing: -8px;
 	}
 
 	.text .letter span {

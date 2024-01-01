@@ -1,6 +1,4 @@
-*, *:before, *:after {
-    box-sizing: border-box;
-}
+
 
 #main-content {
     visibility: hidden; /* 初始隐藏主内容 */

@@ -1,7 +1,7 @@
 /* 结束加载动画 */
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("load", function() {
   var startTime = new Date().getTime();
-  var minimumLoadingTime = 2000; // 最少的加载时间
+  var minimumLoadingTime = 500; // 至少需加载 0.5 秒
 
   var checkLoadingTime = function() {
       var currentTime = new Date().getTime();
@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
           var mainContent = document.getElementById('main-content');
           if (mainContent) {
               mainContent.style.visibility = 'visible';
-              $('.bio').addClass('ready');
               $('.pre-text').addClass('text');
+              $('.bio').addClass('ready');
               addCircles();
           }
       } else {
