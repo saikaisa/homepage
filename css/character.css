@@ -4,6 +4,7 @@
 	letter-spacing: -11px;
 	text-align: center;
 	margin: 10px auto;
+	cursor: default;
 }
 
 .text .letter {
@@ -757,6 +758,17 @@
 	}
 }
 
+@media only screen and (max-width: 1024px) and (max-aspect-ratio: 1/1) {
+	.text {
+		font-size: 8em;
+		letter-spacing: -11px;
+	}
+
+	.text .letter span {
+		bottom: 1rem;
+	}
+}
+
 @media only screen and (max-width: 767px) {
 	.text {
 		font-size: 6em;
@@ -770,8 +782,8 @@
 
 @media only screen and (max-width: 480px) {
 	.text {
-		font-size: 5em;
-		letter-spacing: -8px;
+		font-size: 4em;
+		letter-spacing: -6px;
 	}
 
 	.text .letter span {

@@ -1,8 +1,18 @@
 @charset "utf-8";
 
-@import url("https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:300");
+@font-face {
+    font-family: 'Fredoka One';
+    src:url('../fonts/subset-FredokaOne-Regular.woff2') format('woff2'),
+        url('../fonts/subset-FredokaOne-Regular.woff') format('woff'),
+        url('../fonts/subset-FredokaOne-Regular.ttf') format('truetype'),
+        url('../fonts/subset-FredokaOne-Regular.svg#FredokaOne-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 html,body {
+	position: fixed;
 	margin: 0;
 	padding: 0;
 	height: 100%;
@@ -32,14 +42,14 @@ body {
 
 .avatar {
 	border-radius: 50%;
-	width: 150px;
+	width: 192px;
 	margin: 15px auto;
 	-webkit-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
 }
 
 .avatar:hover {
-	opacity: 0.4;
+	opacity: 0.5;
 }
 
 p {
@@ -57,6 +67,7 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: default;
 }
 
 .bio > span {
@@ -148,9 +159,28 @@ a {
 	color: #6F8EC5;
 }
 
+@media only screen and (max-width: 1024px) and (max-aspect-ratio: 1/1) {
+    .avatar {
+		width: 256px;
+	}
+	.bio > span, .intro .bio span {
+		font-size: 24px;
+	}
+	.social-links img {
+		width: 56px;
+	}
+	.social-links ul li {
+		padding: 20px;
+	}
+	.social-links ul li a::after {
+		font-size: 16px;
+		padding: 8px 12px;
+	}
+}
+
 @media only screen and (max-width: 767px) {
     .avatar {
-		width: 120px;
+		width: 160px;
 	}
 	.bio > span, .intro .bio span {
 		font-size: 14px;
@@ -169,20 +199,20 @@ a {
 
 @media only screen and (max-width: 480px) {
 	.avatar {
-		width: 96px;
+		width: 150px;
 	}
 	.bio > span, .intro .bio span {
-		font-size: 12px;
+		font-size: 13px;
 	}
 	.social-links img {
-		width: 28px;
+		width: 36px;
 	}
 	.social-links ul li {
-		padding: 5px;
+		padding: 7px;
 	}
 	.social-links ul li a::after {
-		font-size: 8px;
-		padding: 4px 8px;
+		font-size: 12px;
+		padding: 6px 8px;
 	}
 	.footer {
 		font-size: 8px;

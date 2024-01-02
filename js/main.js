@@ -1,13 +1,6 @@
 /* 结束加载动画 */
 window.addEventListener("load", function() {
-  var startTime = new Date().getTime();
-  var minimumLoadingTime = 500; // 至少需加载 0.5 秒
-
-  var checkLoadingTime = function() {
-      var currentTime = new Date().getTime();
-      var elapsedTime = currentTime - startTime;
-
-      if (elapsedTime >= minimumLoadingTime) {
+  setTimeout(() => {
           // 隐藏加载动画
           var loader = document.querySelector('.loader');
           if (loader) {
@@ -16,16 +9,15 @@ window.addEventListener("load", function() {
           // 显示主内容
           var mainContent = document.getElementById('main-content');
           if (mainContent) {
-              mainContent.style.visibility = 'visible';
+              
               $('.pre-text').addClass('text');
               $('.bio').addClass('ready');
               addCircles();
+              setTimeout(() => {
+                mainContent.style.visibility = 'visible';
+              }, 50);
           }
-      } else {
-          setTimeout(checkLoadingTime, minimumLoadingTime - elapsedTime);
-      }
-  };
-  checkLoadingTime();
+        }, 900);  // 至少加载 0.9 秒
 });
 
 /* 画圆 */
@@ -40,7 +32,7 @@ function addCircles() {
 
 function addCircle(x, y) {
 	var circle = document.createElement('div');
-	var animationTime = Math.round(Math.random() * 10);
+	var animationTime = Math.round(Math.random() * 7);
 	circle.classList.add('circle');
 	circle.style.left = x + 'vw';
 	circle.style.top = y + 'vh';
