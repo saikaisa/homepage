@@ -32,6 +32,7 @@ body {
 
 .personal-info {
     margin: auto;
+	margin-bottom: 30px;
     text-align: center;
 }
 
@@ -87,6 +88,10 @@ a {
 	font-size: 16px;
 }
 
+.newline {
+	display: inline;
+}
+
 .social-links {
     text-align: center;
     margin-top: 10px;
@@ -101,17 +106,20 @@ a {
 .social-links ul li {
     display: inline-block; /* 使图标保持水平排列 */
     margin-right: 5px;
-    margin-top: 20px;
+    margin-top: 0px;
     padding: 10px;
+	border-radius: 50%;
     list-style-type: none;
 }
 
 .social-links ul li a {
     position: relative;
 	display: block;
+	border-radius: 50%;
 }
 
 .social-links ul li img {
+	border-radius: 50%;
 	-webkit-transition: opacity 0.3s ease;
 	transition: opacity 0.3s ease;
     cursor: pointer;
@@ -176,6 +184,9 @@ a {
 		font-size: 16px;
 		padding: 8px 12px;
 	}
+	.newline {
+		display: block;
+	}
 }
 
 @media only screen and (max-width: 767px) {
@@ -194,6 +205,9 @@ a {
 	.social-links ul li a::after {
 		font-size: 10px;
 		padding: 5px 8px;
+	}
+	.newline {
+		display: block;
 	}
 }
 
@@ -216,5 +230,8 @@ a {
 	}
 	.footer {
 		font-size: 8px;
+	}
+	.newline {
+		display: block;
 	}
 }
