@@ -129,6 +129,11 @@ a {
     opacity: 0.3;
 }
 
+.social-links ul li a:hover::after {
+    opacity: 1;
+    pointer-events: none;
+}
+
 .social-links ul li a::after {
     content: attr(tip);
     position: absolute;
@@ -143,12 +148,9 @@ a {
     white-space: nowrap;
     z-index: 1;
     opacity: 0;
-	-webkit-transition: opacity 0.3s ease;
+    -webkit-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
-}
-
-.social-links ul li a:hover::after {
-    opacity: 1; /* 鼠标悬浮时显示提示 */
+    pointer-events: none;
 }
 
 .footer {
@@ -156,10 +158,14 @@ a {
 	bottom: 8px;
 	left: 50%;
 	transform: translateX(-50%);
-	font-size: 12px;
-	opacity: .4;
+	opacity: .3;
 	font-weight: 100;
 	text-align: center;
+}
+
+.footer p {
+	font-size: 12px;
+	padding-bottom:2px;
 }
 
 ::selection {
