@@ -1,15 +1,16 @@
 @charset "utf-8";
 
 @font-face {
-    font-family: 'Fredoka One';
-    src:url('../fonts/subset-FredokaOne-Regular.woff2') format('woff2'),
-        url('../fonts/subset-FredokaOne-Regular.woff') format('woff'),
-        url('../fonts/subset-FredokaOne-Regular.ttf') format('truetype'),
-        url('../fonts/subset-FredokaOne-Regular.svg#FredokaOne-Regular') format('svg');
-    font-weight: 400;
+    font-family: 'AaHuanLeBao';
+    src: url('../fonts/subset-AaHuanLeBao.woff2') format('woff2'),
+        url('../fonts/subset-AaHuanLeBao.woff') format('woff'),
+        url('../fonts/subset-AaHuanLeBao.ttf') format('truetype'),
+        url('../fonts/subset-AaHuanLeBao.svg#AaHuanLeBao') format('svg');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
+
 
 html,body {
 	position: fixed;
