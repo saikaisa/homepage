@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <title>猫猫月www 个人主页</title>
-    <meta name="author" content="Saikaisa">
+	<meta charset="utf-8">
+	<title>猫猫月www 个人主页</title>
+	<meta name="author" content="Saikaisa">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="HandheldFriendly" content="true">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="HandheldFriendly" content="true">
+	<meta name="description" content="猫猫月www的个人主页，介绍我是谁，我做什么，社交账号等。">
+	<meta name="keywords" content="猫猫月www, 个人主页">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -15,7 +17,7 @@
 <div id="main-content">
 <div class="content-container">
 	<div class="personal-info">
-		<img class="avatar" src="avatar.jpg"/>
+		<img class="avatar" src="avatar.jpg" alt="头像"/>
 		<div class="pre-text">
 			<div class="first-part">
 				<span class="letter"><div class="character">猫</div> <span></span></span>
@@ -45,14 +47,14 @@
 		</span>
 		<div class="intro">
 			<span class="bio">
-				<span style="transition-delay:1.4s">CS本科 | 友好 | 喜欢游戏/摄影/音乐/可爱的事物</span>
+				<span style="transition-delay:1.4s">🧡hola~ | CS本科 | 内向但友好(ó﹏ò｡) | 欢迎找我玩!🧡</span>
 			</span>
 		</div>
 	</div>
 	<div class="social-links">
 		<ul>
 			<li>
-				<a href="mailto:me@saikaisa.top?subject=来自个人页" target="_blank" tip="邮箱">
+				<a href="mailto:me@saikaisa.top?subject=来自个人页的访客" target="_blank" tip="邮箱">
 					<svg t="1733131384024" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="65894" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40">
 						<path d="M512 1024C229.216 1024 0 794.784 0 512S229.216 0 512 0s512 229.216 512 512-229.216 512-512 512z m113.792-529.696l142.112 197.024L768 408.96l-142.208 85.344zM258.016 352L512 522.752 766.624 352H258.016z m-1.92 340.16l142.112-197.856L256 408.96l0.096 283.2z m256.16-112.448l-85.6-56.96-113.76 170.688h398.208l-113.76-170.688L512 579.648l0.416 0.16-0.096-0.032-0.064 0.032v-0.096z" fill="#2F54EB" p-id="65895"></path>
 					</svg>
@@ -107,13 +109,13 @@
 
 <div class="footer">
 	<p>
-		<b>&copy; 2023-2024 <a href="#" target="_self">Saikaisa</a></b>
+		<b>&copy; 2023-2025 <a href="#" target="_self">Mooncat/nekonya_moon</a></b>
 	</p>
 </div>
 
 </div>
 <script>
-	window.addEventListener("load",function(){setTimeout(()=>{var e=document.querySelector(".loader"),t=(e&&(e.style.display="none"),document.getElementById("main-content"));t&&($(".pre-text").addClass("text"),$(".bio").addClass("ready"),generateStaticCircles(),addCircles(),setTimeout(()=>{t.style.visibility="visible"},50))},1e3)});let colorPalettes=[["#81ecec","#74b9ff","#a29bfe"],["#fab1a0","#ff7675","#fd79a8"],["#ffeaa7","#fab1a0","#ff7675"],["#55efc4","#00cec9","#00b894"],["#ffeaa7","#ffcccc","#ffd700"]],staticCircles=[{x:0,y:10,r:80},{x:4,y:0,r:100},{x:100,y:92,r:80},{x:95,y:100,r:100},{x:98,y:0,r:110},{x:0,y:99,r:80},{x:4,y:100,r:60}];function generateStaticCircles(){let a=randomPalette();staticCircles.forEach((e,t)=>{addStaticCircle(e.x,e.y,e.r,a[t%a.length])})}function addStaticCircle(e,t,a,r){var i=document.createElement("div");i.classList.add("circle","static"),i.style.left=e+"vw",i.style.top=t+"vh",i.style.transform="translate(-50%, -50%)",i.style.width=2*a+"px",i.style.height=2*a+"px",i.style.borderRadius="50%",i.style.backgroundColor=r,document.body.appendChild(i)}function randomPalette(){return colorPalettes[Math.floor(Math.random()*colorPalettes.length)]}function addCircles(){addCircle(...randomPosition())}function addCircle(e,t){var a=document.createElement("div");a.classList.add("circle","dynamic"),a.style.left=e+"vw",a.style.top=t+"vh",a.style.backgroundColor=randomColor(),a.addEventListener("animationend",()=>{removeCircle(a),setTimeout(()=>{addCircle(...randomPosition())},800)}),document.body.appendChild(a)}function removeCircle(e){document.body.removeChild(e)}function randomPosition(){return[95*Math.random()+1,90*Math.random()+1]}function randomColor(){var e=["#81ecec","#74b9ff","#a29bfe","#ffeaa7","#fab1a0","#ff7675","#fd79a8"];return e[Math.round(Math.random()*(e.length-1))]}class Rail{static getInstance(e){return Rail.instances||(Rail.instances={}),Rail.instances[e]||(Rail.instances[e]=new Rail(e)),Rail.instances[e]}static filter(e,t){var a,r=[];for(a of e)t(a)&&r.push(a);return r}constructor(e){this.ele=document.querySelectorAll(e)}addClass(e){for(var t of this.ele){var a=Rail.filter(t.className.split(" "),e=>!!e);a.push(e),t.className=a.join(" ")}return this}removeClass(t){for(var e of this.ele){var a=e.className.split(" ");e.className=Rail.filter(a,e=>e!==t).join(" ")}return this}getOrigionalElement(e){return e?this.ele[e]:this.ele}setStyle(e,t){for(var a of this.ele)a.style[e]=t;return this}}window.$=e=>Rail.getInstance(e);
+	window.addEventListener("load",function(){setTimeout(()=>{var e=document.querySelector(".loader"),t=(e&&(e.style.display="none"),document.getElementById("main-content"));t&&($(".pre-text").addClass("text"),$(".bio").addClass("ready"),generateStaticCircles(),addCircles(),setTimeout(()=>{t.style.visibility="visible"},50))},1e3)});let circleTimer=null,colorPalettes=(circleTimer&&(clearTimeout(circleTimer),circleTimer=null),[["#81ecec","#74b9ff","#a29bfe"],["#fab1a0","#ff7675","#fd79a8"],["#ffeaa7","#fab1a0","#ff7675"],["#55efc4","#00cec9","#00b894"],["#ffeaa7","#ffcccc","#ffd700"]]),staticCircles=[{x:0,y:10,r:80},{x:4,y:0,r:100},{x:100,y:92,r:80},{x:95,y:100,r:100},{x:98,y:0,r:110},{x:0,y:99,r:80},{x:4,y:100,r:60}];function generateStaticCircles(){let a=randomPalette();staticCircles.forEach((e,t)=>{addStaticCircle(e.x,e.y,e.r,a[t%a.length])})}function addStaticCircle(e,t,a,r){var i=document.createElement("div");i.classList.add("circle","static"),i.style.left=e+"vw",i.style.top=t+"vh",i.style.transform="translate(-50%, -50%)",i.style.width=2*a+"px",i.style.height=2*a+"px",i.style.borderRadius="50%",i.style.backgroundColor=r,document.body.appendChild(i)}function randomPalette(){return colorPalettes[Math.floor(Math.random()*colorPalettes.length)]}function addCircles(){addCircle(...randomPosition())}function addCircle(e,t){var a=document.createElement("div");a.classList.add("circle","dynamic"),a.style.left=e+"vw",a.style.top=t+"vh",a.style.backgroundColor=randomColor(),a.addEventListener("animationend",function e(){a.removeEventListener("animationend",e),removeCircle(a),setTimeout(()=>{addCircle(...randomPosition())},800)}),document.body.appendChild(a)}function removeCircle(e){e&&e.parentNode===document.body&&document.body.removeChild(e)}function randomPosition(){return[95*Math.random()+1,90*Math.random()+1]}function randomColor(){var e=["#81ecec","#74b9ff","#a29bfe","#ffeaa7","#fab1a0","#ff7675","#fd79a8"];return e[Math.round(Math.random()*(e.length-1))]}class Rail{static getInstance(e){return Rail.instances||(Rail.instances={}),Rail.instances[e]||(Rail.instances[e]=new Rail(e)),Rail.instances[e]}static filter(e,t){var a,r=[];for(a of e)t(a)&&r.push(a);return r}constructor(e){this.ele=document.querySelectorAll(e)}addClass(e){for(var t of this.ele){var a=Rail.filter(t.className.split(" "),e=>!!e);a.push(e),t.className=a.join(" ")}return this}removeClass(t){for(var e of this.ele){var a=e.className.split(" ");e.className=Rail.filter(a,e=>e!==t).join(" ")}return this}getOrigionalElement(e){return e?this.ele[e]:this.ele}setStyle(e,t){for(var a of this.ele)a.style[e]=t;return this}}window.$=e=>Rail.getInstance(e),window.addEventListener("beforeunload",function(){circleTimer&&(clearTimeout(circleTimer),circleTimer=null),document.querySelectorAll(".circle.dynamic").forEach(e=>{e.parentNode===document.body&&document.body.removeChild(e)})});
 </script>
 </body>
 </html>

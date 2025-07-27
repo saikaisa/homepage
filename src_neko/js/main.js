@@ -21,6 +21,14 @@ window.addEventListener("load", function() {
         }, 1000);  // 至少加载 1 秒
 });
 
+let circleTimer = null; // 存储定时器引用
+
+// 在创建新圆前清除之前的定时器
+if (circleTimer) {
+  clearTimeout(circleTimer);
+  circleTimer = null;
+}
+
 /* 画圆 */
 // 静态圆
 // 调色板
@@ -95,12 +103,14 @@ function addCircle(x, y) {
   circle.style.backgroundColor = randomColor();
 
   // 监听动画结束后再移除圆
-  circle.addEventListener('animationend', () => {
-      removeCircle(circle);
+  circle.addEventListener('animationend', function animationEndHandler() {
+    // 移除事件监听器，防止多次触发
+    circle.removeEventListener('animationend', animationEndHandler);
+    removeCircle(circle);
       
-      // 等待 800 毫秒后生成下一个圆
-      setTimeout(() => {
-        addCircle(...randomPosition());
+    // 等待 800 毫秒后生成下一个圆
+    setTimeout(() => {
+      addCircle(...randomPosition());
     }, 800); 
   });
 
@@ -108,7 +118,10 @@ function addCircle(x, y) {
 }
 
 function removeCircle(circle) {
-  document.body.removeChild(circle);
+  // 确保元素存在并且是body的子元素
+  if (circle && circle.parentNode === document.body) {
+    document.body.removeChild(circle);
+  }
 }
 
 function randomPosition() {
@@ -182,3 +195,20 @@ class Rail {
 window.$ = (selector) => {
   return Rail.getInstance(selector);
 };
+
+window.addEventListener('beforeunload', function() {
+  // 清除定时器
+  if (circleTimer) {
+    clearTimeout(circleTimer);
+    circleTimer = null;
+  }
+  
+  // 移除所有动态圆
+  const dynamicCircles = document.querySelectorAll('.circle.dynamic');
+  dynamicCircles.forEach(circle => {
+    // 移除事件监听器
+    if (circle.parentNode === document.body) {
+      document.body.removeChild(circle);
+    }
+  });
+});

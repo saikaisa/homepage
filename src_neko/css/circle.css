@@ -18,14 +18,21 @@
     -webkit-animation: grow var(--grow-time) forwards, fade var(--fade-time) calc(var(--grow-time) - var(--fade-time)) forwards;
     animation: grow var(--grow-time) forwards, fade var(--fade-time) calc(var(--grow-time) - var(--fade-time)) forwards;
     opacity: 0.4;
+    pointer-events: none;
 }
 
 /* 静态圆 */
 .circle.static {
-    z-index: -2; /* 更靠后 */
+    z-index: -2;
     width: 100px;
     height: 100px;
     opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: auto;
+}
+  
+.circle.static:hover {
+    opacity: 0.5;
 }
 
 /* 动态圆的生长动画 */
